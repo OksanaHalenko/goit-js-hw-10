@@ -37,7 +37,6 @@ function clickOnStart() {
     input.disabled = true;
     
     const userTime = userSelectedDate.getTime();
-    console.log(userTime);
     intervalId = setInterval(() => {
         const currentTime = Date.now();
         let deltaTime = userTime - currentTime;
@@ -45,7 +44,6 @@ function clickOnStart() {
         const formattedTime = addLeadingZero(time);
         updateClockFace(formattedTime);
     if (deltaTime < 0) {
-        console.log("stop");
         clearInterval(intervalId);
         timer[0].textContent = "00";
         timer[1].textContent = "00";
